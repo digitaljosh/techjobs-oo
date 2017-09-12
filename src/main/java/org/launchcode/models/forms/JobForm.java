@@ -1,6 +1,5 @@
 package org.launchcode.models.forms;
 
-import org.hibernate.validator.constraints.NotBlank;
 import org.launchcode.models.CoreCompetency;
 import org.launchcode.models.Employer;
 import org.launchcode.models.Location;
@@ -14,10 +13,11 @@ import java.util.ArrayList;
 /**
  * Created by LaunchCode
  */
+
 public class JobForm {
 
-    @NotBlank
-    @Size(min=1, max = 15, message = "Name may not be empty")
+    @NotNull
+    @Size(min=1, message = "Name may not be empty")
     private String name;
 
     @NotNull
@@ -27,12 +27,12 @@ public class JobForm {
     private int positionTypeId;
 
 
-
     /*
         TODO #3 - Include other fields needed to create a job,
         with correct validation attributes and display names.
         Don't forget to add getters and setters
      */
+
 
     private ArrayList<Employer> employers;
     private ArrayList<Location> locations;
